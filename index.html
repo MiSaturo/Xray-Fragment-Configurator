@@ -25,27 +25,21 @@
                 <option value="tlshello">TLS Hello</option>
                 <option value="1-3">IP Segmentation </option>
             </select>
-
             <label for="fg_length">Length:</label>
             <input type="text" id="fg_length" value="100-200">
-
             <label for="fg_interval">Interval (ms):</label>
             <input type="text" id="fg_interval" value="10-20">
-
-            <br/>
+            <br />
             <button onclick="apply()">Apply</button>
-            <br/>
-            <button onclick="apply() && copyToClipboard(dest.value);">Appy & Copy </button>
+            <br />
+            <button onclick="apply() && copyToClipboard(dest.value);">Apply & Copy </button>
         </div>
-
         <fieldset>
             <legend>Result Config</legend>
             <textarea class="editor" id="dest"></textarea>
         </fieldset>
         <script src="app.js"></script>
     </div>
-
-
 </body>
 
 </html>
