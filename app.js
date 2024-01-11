@@ -2,12 +2,11 @@ function apply() {
     let sourceText = source.value;
     let sourceObject = {};
 
-    if(!sourceText.trim()){
+    if (!sourceText.trim()) {
         console.error("Source config is empty!");
-        dest.value = "Source config is empty!" ;
+        dest.value = "Source config is empty!";
         return;
     }
-    
 
     try {
         sourceObject = JSON.parse(sourceText);
@@ -24,7 +23,7 @@ function apply() {
         return;
     }
 
-    proxyOutbound={...proxyOutbound};
+    proxyOutbound = { ...proxyOutbound };
 
     let destObject = { ...sourceObject };
 
@@ -39,8 +38,6 @@ function apply() {
         tcpKeepAliveIdle: 100,
         tcpNoDelay: true
     };
-
-
 
     destObject.outbounds = destObject.outbounds.filter(r => r.tag != "fragment" && r.tag != "proxy")
 
@@ -67,24 +64,22 @@ function apply() {
 
     destObject.outbounds.unshift(proxyOutbound);
 
-
     dest.value = JSON.stringify(destObject, null, 4);
 
     return true;
 }
 
-async function copyToClipboard(text){
-      // Get the text field
-  let copyText = document.getElementById("dest");
+async function copyToClipboard(text) {
+    // Get the text field
+    let copyText = document.getElementById("dest");
 
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
 
-  // Copy the text inside the text field
-  await navigator.clipboard.writeText(text);
-  
-  // Alert the copied text
-  alert("Copied to clipboard!");
- 
- }
+    // Copy the text inside the text field
+    await navigator.clipboard.writeText(text);
+
+    // Alert the copied text
+    alert("Copied to clipboard!");
+}

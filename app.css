@@ -1,65 +1,85 @@
 #main-wrapper {
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#main-wrapper>*{
-    flex: 1;
+#main-wrapper > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .editor {
-    height: 70vh;
-    width: -webkit-fill-available;
-    resize: none;
-    border: solid 1px gray;
+  height: 70vh;
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  resize: none;
+  border: solid 1px gray;
 }
 
-html{
-    height: 100vh;
-    background: lightgray;
-    font-family: math;
+html {
+  height: 100vh;
+  background: lightgray;
+  font-family: math;
 }
 
 #control-panel {
-    flex: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5pt;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5pt;
 }
 
-#control-panel>*{
-    display: block;
-    width: -webkit-fill-available;
-
+#control-panel > * {
+  display: block;
+  width: -webkit-fill-available;
 }
 
 #control-panel label {
-    margin-top: 0.25em;
+  margin-top: 0.25em;
 }
 
 #header {
-    font-size: xx-large;
-    text-align: center;
-    padding: 0.5em;
-    margin-bottom: 10pt;
-    background: black;
-    color: white;
+  font-size: xx-large;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 10pt;
+  background: black;
+  color: white;
 }
 
 fieldset {
-    padding: 5px 5px 0px;
+  padding: 5px 5px 0px;
 }
 
 legend {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 @media only screen and (max-width: 600px) {
-    #main-wrapper {
-       flex-direction: column;
-    }
-    
-    input, button, select {
-        padding: 1em;
-    }
+  #main-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
+  input,
+  button,
+  select {
+    padding: 1em;
+  }
+}
