@@ -1,14 +1,21 @@
 #main-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 #main-wrapper > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
 .editor {
   height: 70vh;
+  width: 100%;
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
   resize: none;
   border: solid 1px gray;
 }
@@ -20,9 +27,18 @@ html {
 }
 
 #control-panel {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
   flex: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 5pt;
 }
@@ -55,6 +71,9 @@ legend {
 
 @media only screen and (max-width: 600px) {
   #main-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
