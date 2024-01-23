@@ -54,6 +54,15 @@ legend {
     margin-left: 0.5em;
 }
 
+#github-star{
+    display: inline-block;
+    background: url(github-stars.png) center no-repeat;
+    height: 2em;
+    width: 2em;
+    background-size: contain;
+    vertical-align: middle;
+}
+
 @media only screen and (max-width: 600px) {
     #main-wrapper {
        flex-direction: column;
